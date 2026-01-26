@@ -7,8 +7,16 @@ import java.util.List;
 public class Author extends Person{
     private List<Book> books;
 
-    public void newBook(Book book){};
-    public void showBooks(){};
+    public void newBook(Book book){
+
+    }
+
+    public void showBooks(){
+
+    }
+
     @Override
-    public String whoYouAre(){};
+    public String whoYouAre(){
+        return null;
+    }
 }

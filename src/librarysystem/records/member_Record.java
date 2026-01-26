@@ -4,13 +4,30 @@ import librarysystem.enums.MemberType;
 
 import java.time.LocalDate;
 
-public class member_Record {
-    protected int member_id;
+public abstract class member_Record {
+
+    protected int memberID;
     protected MemberType type;
-    protected LocalDate date_of_membership;
-    protected int no_books_issued;
-    protected int max_book_limit;
+    protected LocalDate dateOfMembership;
+    protected int noBookIssued;
+    protected int maxBookLimit;
     protected String name;
     protected String address;
-    protected String phone_no;
+    protected String phoneNo;
+
+    public void getMember() {
+
+    }
+
+    public void incBookIssued() {
+
+    }
+
+    public void decBookIssued() {
+
+    }
+
+    public void payBill() {
+
+    }
 }

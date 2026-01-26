@@ -1,21 +1,40 @@
 package librarysystem.books;
 
+
 import librarysystem.enums.BookStatus;
 import librarysystem.people.Author;
-import librarysystem.people.Reader;
-import java.time.LocalDate;
+import librarysystem.people.Person;
+
+import java.util.Date;
 
 public abstract class Book {
-    protected int book_ID;
-    protected Author author;
-    protected String name;
-    protected double price;
-    protected BookStatus bookStatus;
-    protected int edition;
-    protected LocalDate date_of_purchase;
-    protected Reader reader;
+    private int bookID;
+    private Author author;
+    private String name;
+    private double price;
+    private BookStatus status;
+    private int edition;
+    private Date dateOfPurchase;
 
-    public String getTitle(){};
+    public String getTitle() {
+        return null;
+    }
 
-    
+    public Author getAuthor() {
+        return null;
+    }
+
+    public Person getOwner() {
+        return null;
+    }
+
+    public BookStatus getCurrent() {
+        return null;
+    }
+
+    public void display() {
+    }
+
+    public void updateStatus(BookStatus status) {
+    }
 }
