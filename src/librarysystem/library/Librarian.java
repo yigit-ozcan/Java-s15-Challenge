@@ -1,5 +1,7 @@
 package librarysystem.library;
 
+import librarysystem.people.Reader;
+
 public class Librarian {
 
     private String name;
@@ -17,12 +19,13 @@ public class Librarian {
 
     }
 
-    public void calculateFine() {
-
+    public int calculateFine() {
+        return 10;
     }
 
-    public void createBill() {
-
+    public void createBill(Reader reader) {
+        int fine = calculateFine();
+        reader.getRecord().addBalance(fine);
     }
 
     public void returnBook() {

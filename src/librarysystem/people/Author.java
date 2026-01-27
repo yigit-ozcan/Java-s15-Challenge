@@ -13,6 +13,12 @@ public class Author extends Person{
 
     public void showBooks(){
 
+        if(books != null) {
+            for(Book book: books) {
+                System.out.println("Book: " + book.getTitle());
+            }
+        }
+
     }
 
     @Override
