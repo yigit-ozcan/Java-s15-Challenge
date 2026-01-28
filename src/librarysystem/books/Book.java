@@ -8,6 +8,7 @@ import librarysystem.people.Person;
 import java.util.Date;
 
 public abstract class Book {
+
     private int bookID;
     private Author author;
     private String name;
@@ -31,6 +32,19 @@ public abstract class Book {
     public BookStatus getCurrent() {
         return null;
     }
+
+    public void setTitle(String title) {
+        this.name = title;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
+    public void setCurrent(BookStatus status) {
+        this.status = status;
+    }
+
 
     public void display() {
     }

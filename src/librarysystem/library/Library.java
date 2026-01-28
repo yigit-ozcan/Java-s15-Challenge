@@ -15,6 +15,11 @@ public class Library {
     public void getBooks() {
     }
 
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+
+
     public void getReader() {
     }
 

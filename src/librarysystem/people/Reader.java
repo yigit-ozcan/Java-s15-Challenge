@@ -14,6 +14,14 @@ public class Reader extends Person {
         return record;
     }
 
+    public void setRecord(member_Record record) {
+        this.record = record;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+
     public void purchaseBook(Book book) {
     }
 
