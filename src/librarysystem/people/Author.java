@@ -2,13 +2,17 @@ package librarysystem.people;
 
 import librarysystem.books.Book;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Author extends Person{
     private List<Book> books;
 
-    public void newBook(Book book){
-
+    public void newBook(Book book) {
+        if (books == null) {
+            books = new ArrayList<>();
+        }
+        books.add(book);
     }
 
     public void showBooks(){

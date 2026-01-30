@@ -19,8 +19,11 @@ public class Library {
         this.books = books;
     }
 
-
     public void getReader() {
+    }
+
+    public List<Book> getBooksList() {
+        return books;
     }
 
     public void newBook() {
@@ -28,10 +31,12 @@ public class Library {
 
     public void lendBook(Book book, Reader reader) {
 
-        if(book.getCurrent() == BookStatus.AVAILABLE
-            && reader != null
-            && reader.getRecord() != null
-            && reader.getRecord().getNoBookIssued() < reader.getRecord().getMaxBookLimit()) {
+        if (book == null || reader == null || reader.getRecord() == null) {
+            return;
+        }
+
+        if (book.getCurrent() == BookStatus.AVAILABLE
+                && reader.getRecord().getNoBookIssued() < reader.getRecord().getMaxBookLimit()) {
 
             book.updateStatus(BookStatus.ISSUED);
             reader.borrowBook(book);
@@ -40,13 +45,15 @@ public class Library {
 
     public void takeBackBook(Book book, Reader reader) {
 
-        if( reader != null && reader.getRecord() != null) {
-
-            reader.returnBook(book);
-            reader.getRecord().decBookIssued();
-            book.updateStatus(BookStatus.AVAILABLE);
+        if (book == null || reader == null || reader.getRecord() == null) {
+            return;
         }
+
+        reader.returnBook(book);
+        reader.getRecord().decBookIssued();
+        book.updateStatus(BookStatus.AVAILABLE);
     }
+
 
     public void showBook() {
 

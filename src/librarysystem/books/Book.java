@@ -18,11 +18,11 @@ public abstract class Book {
     private Date dateOfPurchase;
 
     public String getTitle() {
-        return null;
+        return name;
     }
 
     public Author getAuthor() {
-        return null;
+        return author;
     }
 
     public Person getOwner() {
@@ -30,7 +30,7 @@ public abstract class Book {
     }
 
     public BookStatus getCurrent() {
-        return null;
+        return status;
     }
 
     public void setTitle(String title) {
@@ -45,10 +45,15 @@ public abstract class Book {
         this.status = status;
     }
 
-
     public void display() {
+        System.out.println(
+                "Title: " + name +
+                        ", Author: " + (author != null ? author.whoYouAre() : "Unknown") +
+                        ", Status: " + status
+        );
     }
 
     public void updateStatus(BookStatus status) {
+        this.status = status;
     }
 }
