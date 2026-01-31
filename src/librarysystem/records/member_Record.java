@@ -17,7 +17,14 @@ public abstract class member_Record {
     protected int balance;
 
     public void getMember() {
-
+        System.out.println(
+                "Member ID: " + memberID +
+                        ", Name: " + name +
+                        ", Type: " + type +
+                        ", Books Issued: " + noBookIssued +
+                        "/" + maxBookLimit +
+                        ", Balance: " + balance
+        );
     }
 
     public int getNoBookIssued() {

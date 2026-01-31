@@ -26,7 +26,8 @@ public class Author extends Person{
     }
 
     @Override
-    public String whoYouAre(){
-        return null;
+    public String whoYouAre() {
+        return "Author: " + name;
     }
+
 }

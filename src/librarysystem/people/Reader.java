@@ -31,11 +31,19 @@ public class Reader extends Person {
 
     public void borrowBook(Book book) {
 
-        if (books != null && record != null) {
-            books.add(book);
-            record.incBookIssued();
+        if (book == null || books == null || record == null) {
+            return;
         }
+
+        if (books.contains(book)) {
+            System.out.println("You already borrowed this book.");
+            return;
+        }
+
+        books.add(book);
+        record.incBookIssued();
     }
+
 
     public void returnBook(Book book) {
 
@@ -57,6 +65,7 @@ public class Reader extends Person {
 
     @Override
     public String whoYouAre() {
-        return null;
+        return "Reader: " + name;
     }
+
 }

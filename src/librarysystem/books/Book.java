@@ -16,6 +16,11 @@ public abstract class Book {
     private BookStatus status;
     private int edition;
     private Date dateOfPurchase;
+    private Person owner;
+
+    public int getBookID() {
+        return bookID;
+    }
 
     public String getTitle() {
         return name;
@@ -26,11 +31,15 @@ public abstract class Book {
     }
 
     public Person getOwner() {
-        return null;
+        return owner;
     }
 
     public BookStatus getCurrent() {
         return status;
+    }
+
+    public void setBookID(int bookID) {
+        this.bookID = bookID;
     }
 
     public void setTitle(String title) {
@@ -41,6 +50,10 @@ public abstract class Book {
         this.author = author;
     }
 
+    public void setOwner(Person owner) {
+        this.owner = owner;
+    }
+
     public void setCurrent(BookStatus status) {
         this.status = status;
     }
@@ -49,7 +62,8 @@ public abstract class Book {
         System.out.println(
                 "Title: " + name +
                         ", Author: " + (author != null ? author.whoYouAre() : "Unknown") +
-                        ", Status: " + status
+                        ", Status: " + status +
+                        ", Owner: " + (owner != null ? owner.whoYouAre() : "None")
         );
     }
 
